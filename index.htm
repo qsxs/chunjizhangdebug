@@ -1,0 +1,222 @@
+
+<html class="uk-notouch" lang="zh-rCN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="./index/bitbug_favicon.ico">
+    <title>纯记账</title>
+    <link href="./index/theme.css" rel="stylesheet">
+    <script type="text/javascript" src="./index/jquery.min.js"></script>
+    <script type="text/javascript" src="./index/uikit.min.js"></script>
+    <script type="text/javascript" src="./index/sticky.min.js"></script>
+    <script type="text/javascript" src="./index/lightbox.min.js"></script>
+    <script type="text/javascript" src="./index/grid-parallax.min.js"></script>
+    <script src="./index/theme.js"></script>
+    <style>
+    .cm-text-uppercase {
+      text-transform: uppercase;
+    }
+    .navbar-toggle {
+        position: relative;
+        float: right;
+        padding: 0.5rem 0.5rem;
+        margin-top: 1rem;
+        margin-right: 0.75rem;
+        margin-bottom: 0.4rem;
+        background-color: transparent;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 0.4rem;
+        display: none;
+        <!--background: #11257b;-->
+    }
+    .navbar-toggle:focus {
+        outline: 0;
+    }
+    .navbar-toggle  .icon-bar{
+        display: block;
+        width: 1.8rem;
+        height: 0.2rem;
+        border-radius: 1px;
+        background-color: #fff;
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+    }
+    @media (max-width: 767px){
+       
+        .navbar-toggle{
+            display: block;
+        }
+        .right{
+            width: 100%;
+        }
+        .uk-navbar-nav{
+            width: 100%;
+        }
+        .right .uk-navbar-nav li{
+            width: 100%;
+            background: #1976D2;
+        }
+    }
+    .weixin{
+        width: 100%;z-index: 99999;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: rgba(0,0,0,0.5) url(index/tap.png) no-repeat;
+        background-position: top right;
+        -webkit-background-size: 40% auto;
+        background-size: 40% auto;
+    }
+    .dn{
+        display: none;
+    }
+    </style>
+    <style type="text/css"></style>
+</head>
+<body>
+<div class="uk-sticky-placeholder" style="margin: 0px;">
+    <div class="uk-sticky-placeholder" style="margin: 0px;">
+        <div class="tm-navbar tm-navbar-overlay tm-navbar-transparent tm-navbar-contrast"
+             data-uk-sticky="{&quot;media&quot;:767,&quot;showup&quot;:true,&quot;animation&quot;:&quot;uk-animation-slide-top&quot;,&quot;top&quot;:&quot;.uk-sticky-placeholder + *&quot;,&quot;clsinactive&quot;:&quot;tm-navbar-transparent tm-navbar-contrast&quot;}"
+             style="margin: 0px;">
+            <div class="uk-container uk-container-center">
+                <nav class="uk-navbar">
+                    <a class="uk-navbar-brand" href="#">
+                        纯记账
+                    </a>
+                     <button class="navbar-toggle">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                    </button>
+                    <div class="uk-navbar-flip uk-hidden-small right">
+                       
+                        <ul class="uk-navbar-nav ">
+                            <li class=" uk-active">
+                                <a href="#">主页</a>
+                            </li>
+                            <li class="">
+                                <a href="#product">下载纯记账</a>
+                            </li>
+                            <li class="">
+                                <a href="#donate">捐赠</a>
+                            </li>
+                            <li class="">
+                                <a href="#about">联系方式</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="tm-hero"
+     class="tm-hero uk-block uk-block-large uk-cover-background uk-flex uk-flex-middle uk-height-viewport uk-contrast"
+     style="background-color: #2196F3;">
+    <div class="uk-container uk-container-center">
+        <section class="uk-grid uk-grid-match" data-uk-grid-margin="">
+            <div class="uk-width-medium-1-1 uk-row-first">
+                <div class="uk-panel  uk-text-center ">
+                    <h1 class="uk-heading-large uk-margin-large-bottom">只是一个账本
+                        <!--<br class="uk-hidden-small">-->
+                        <!--An Android Developer.-->
+                    </h1>
+                    <a class="uk-button uk-button-large" href="./index/chunjizhang.apk" onclick="is_weixin()">下载纯记账</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<div id="tm-main" class="tm-main uk-block uk-block-default">
+    <div class="uk-container uk-container-center">
+        <div class="uk-grid" data-uk-grid-match="" data-uk-grid-margin="">
+            <main class="uk-width-1-1 uk-row-first">
+                <article class="uk-article uk-text-center">
+                    <h2 class="uk-h1 uk-margin-large-bottom" id="product">
+                        下载
+                    </h2>
+                    <div class="uk-grid uk-grid-width-medium-1-1 uk-grid-match"
+                         data-uk-grid-margin="">
+                        <div class="uk-row-first">
+                            <div class="uk-panel">
+                                <div class="uk-margin-large">
+                                    <!--<h3 class="uk-h2">纯记账</h3>-->
+                                    <p>
+                                        纯记账，只记账
+                                        <br>
+                                    </p>
+                                    <p><a href="./index/chunjizhang.apk">点击下载</a></p>
+                                    <img src="./index/c_1.png" width="320">
+                                    <img src="./index/c_2.png" width="320">
+                                    <img src="./index/c_3.png" width="320">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <hr style="margin-top: 100; margin-bottom: 100">
+                    <h2 class="uk-h1 uk-margin-large-bottom" id="donate">
+                        捐赠
+                    </h2>
+                    <div class="uk-grid uk-grid-width-medium-1-1 uk-grid-match" data-uk-grid-margin="">
+                        <div class="uk-row-first">
+                            <div class="uk-panel">
+                                <div class="uk-margin-large">
+                                    <p>
+                                        对于个人开发者来说就只有广告才能带来收入，但是我坚持在《纯记账》中不插入广告，也一直在努力把这个应用做得更好，如果你也喜欢这个应用，经济条件也尚可还可以给我捐赠一下，也希望你能推荐这个App给你的朋友。谢谢
+                                        <br>
+                                        <br>
+                                    <img src="./index/donate_alipay.png" width="320">
+                                    <img src="./index/donate_wechat.jpg" width="320">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <hr style="margin-top: 100; margin-bottom: 100">
+                    <div class="uk-width-medium-3-4 uk-container-center">
+                        <h2 class="uk-h1 uk-margin-large-bottom" id="about">
+                            联系方式
+                        </h2>
+                        <p class="uk-width-medium-4-6 uk-container-center">
+                            内测QQ群：631763463
+                        </p>
+                        <p class="uk-width-medium-4-6 uk-container-center">
+                            邮箱: chunjizhang@139.com
+                        </p>
+                    </div>
+                </article>
+            </main>
+        </div>
+    </div>
+</div>
+<div class="weixin dn">
+    
+</div>
+</body>
+<script type="text/javascript">
+$(".navbar-toggle").on('click',function(){
+    $(".right").slideToggle("fast");
+ });
+
+function is_weixin() {
+     var ua = window.navigator.userAgent.toLowerCase();
+     if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+         $(".weixin").show();
+         return true;
+    } else {
+         return false;
+     }
+ }
+
+
+</script>
+</html>
