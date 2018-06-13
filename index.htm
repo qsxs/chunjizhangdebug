@@ -1,4 +1,3 @@
-
 <html class="uk-notouch" lang="zh-rCN">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -29,8 +28,8 @@
         background-image: none;
         border: 1px solid transparent;
         border-radius: 0.4rem;
+/*         background: #11257b; */
         display: none;
-        <!--background: #11257b;-->
     }
     .navbar-toggle:focus {
         outline: 0;
@@ -45,7 +44,6 @@
         margin-bottom: 0.2rem;
     }
     @media (max-width: 767px){
-       
         .navbar-toggle{
             display: block;
         }
@@ -126,7 +124,7 @@
                         <!--<br class="uk-hidden-small">-->
                         <!--An Android Developer.-->
                     </h1>
-                    <a class="uk-button uk-button-large" href="./index/chunjizhang.apk" onclick="is_weixin()">下载纯记账</a>
+                    <a class="uk-button uk-button-large download_url" href="./index/chunjizhang.apk" >下载纯记账</a>
                 </div>
             </div>
         </section>
@@ -145,12 +143,12 @@
                         <div class="uk-row-first">
                             <div class="uk-panel">
                                 <div class="uk-margin-large">
-                                    <!--<h3 class="uk-h2">纯记账</h3>-->
+<!--                                     <h3 class="uk-h2">纯记账</h3> -->
                                     <p>
                                         纯记账，只记账
                                         <br>
                                     </p>
-                                    <p><a href="./index/chunjizhang.apk">点击下载</a></p>
+                                    <p><a href="./index/chunjizhang.apk" class="download_url">点击下载</a></p>
                                     <img src="./index/c_1.png" width="320">
                                     <img src="./index/c_2.png" width="320">
                                     <img src="./index/c_3.png" width="320">
@@ -170,7 +168,6 @@
                                 <div class="uk-margin-large">
                                     <p>
                                         对于个人开发者来说就只有广告才能带来收入，但是我坚持在《纯记账》中不插入广告，也一直在努力把这个应用做得更好，如果你也喜欢这个应用，经济条件也尚可还可以给我捐赠一下，也希望你能推荐这个App给你的朋友。谢谢
-                                        <br>
                                         <br>
                                     <img src="./index/donate_alipay.png" width="320">
                                     <img src="./index/donate_wechat.jpg" width="320">
@@ -198,8 +195,7 @@
         </div>
     </div>
 </div>
-<div class="weixin dn">
-    
+<div class="weixin dn">  
 </div>
 </body>
 <script type="text/javascript">
@@ -209,17 +205,54 @@ $(".navbar-toggle").on('click',function(){
 $(".uk-navbar-nav").on('click',function(){
     $(".right").slideToggle("fast");
 })
-
-function is_weixin() {
-     var ua = window.navigator.userAgent.toLowerCase();
-     if (ua.match(/MicroMessenger/i) == 'micromessenger') {
-         $(".weixin").show();
-         return true;
-    } else {
-         return false;
-     }
- }
-
-
+//下载赋值
+    //检测是否为微信
+    function is_weixn(){
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i)=="micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    /*
+    * 智能机浏览器版本信息:
+    *
+    */
+    var browser = {
+        versions: function() {
+            var u = navigator.userAgent, app = navigator.appVersion;
+            return {//移动终端浏览器版本信息 
+            trident: u.indexOf('Trident') > -1, //IE内核
+            presto: u.indexOf('Presto') > -1, //opera内核
+            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+            mobile: !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), //是否为移动终端
+            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+            iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者QQHD浏览器
+            iPad: u.indexOf('iPad') > -1, //是否iPad
+            webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+            };
+        }(),
+        language: (navigator.browserLanguage || navigator.language).toLowerCase()
+    }
+    //苹果
+    if (browser.versions.ios || browser.versions.iPhone || browser.versions.iPad) {
+        $(".download_url").attr({"href":"#"});
+       $(".download_url").on("click",function(){
+            alert("Come Soon");
+       })
+    }
+    //安卓
+    if (browser.versions.android) {
+        //微信
+        if(is_weixn()){
+            $(".download_url").attr({"href":"./index/jump.htm"});
+        }else{
+            $(".download_url").attr({"href":"./index/chunjizhang.apk"});
+        }
+    }
+    /*测试一下*/
 </script>
 </html>
