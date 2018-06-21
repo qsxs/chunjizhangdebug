@@ -9,7 +9,7 @@
     <link href="./index/theme.css" rel="stylesheet">
     <script type="text/javascript" src="./index/jquery.min.js"></script>
     <script type="text/javascript" src="./index/uikit.min.js"></script>
-    <script type="text/javascript" src="./index/sticky.min.js"></script>
+    <!-- <script type="text/javascript" src="./index/sticky.min.js"></script> -->
     <script type="text/javascript" src="./index/lightbox.min.js"></script>
     <script type="text/javascript" src="./index/grid-parallax.min.js"></script>
     <script src="./index/theme.js"></script>
@@ -124,16 +124,16 @@
                        
                         <ul class="uk-navbar-nav ">
                             <li class=" uk-active">
-                                <a href="#">主页</a>
+                                <a href="#" >主页</a>
                             </li>
                             <li class="">
-                                <a href="#tm-main">下载纯记账</a>
+                                <a href="#tm-main" class='ani'>下载</a>
                             </li>
                             <li class="">
-                                <a href="#donate">捐赠</a>
+                                <a href="#donates" class='ani'>支持</a>
                             </li>
                             <li class="">
-                                <a href="#about">联系方式</a>
+                                <a href="#about" class='ani'>联系方式</a>
                             </li>
                         </ul>
                     </div>
@@ -187,9 +187,9 @@
                     </div>
 
 
-                    <hr style="margin-top: 100; margin-bottom: 100">
+                    <hr style="margin-top: 100; margin-bottom: 100" id='donates'>
                     <h2 class="uk-h1 uk-margin-large-bottom" id="donate">
-                        捐赠
+                        支持
                     </h2>
                     <div class="uk-grid uk-grid-width-medium-1-1 uk-grid-match" data-uk-grid-margin="">
                         <div class="uk-row-first">
@@ -231,17 +231,7 @@
 <img id="backTop" class='backTop' src="./index/go_top.png">
 </body>
 <script type="text/javascript">
-var flag=true;
-$(".navbar-toggle").on('click',function(){
-    $(".right").slideToggle("fast");
-    
-    if(flag){
-         $(".uk-navbar-nav").on('click',function(){
-            $(".right").slideToggle("fast");
-         })
-         flag=false;
-    }
- });
+
 
 
 //下载赋值
@@ -342,5 +332,29 @@ $(".navbar-toggle").on('click',function(){
         step();
     };
 })();
+
+var flag=false;
+ $(function(){
+    $(".navbar-toggle").on('click',function(){
+        $(".right").slideToggle("fast");
+        flag=true;
+    });
+
+    $(".ani").click(function(){
+        if(flag){
+            $(".right").slideToggle("fast");
+        }
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var $target = $(this.hash);
+            $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+            if ($target.length) {
+                var targetOffset = $target.offset().top;
+            $('html,body').animate({scrollTop: targetOffset},800);
+            return false;
+            }
+        }
+    });
+ });
+
 </script>
 </html>
