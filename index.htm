@@ -13,6 +13,7 @@
     <script type="text/javascript" src="./index/lightbox.min.js"></script>
     <script type="text/javascript" src="./index/grid-parallax.min.js"></script>
     <script src="./index/theme.js"></script>
+    <script type="text/javascript" src="config.js?v=0"></script>
     <style>
     .cm-text-uppercase {
       text-transform: uppercase;
@@ -153,7 +154,7 @@
                         <!--<br class="uk-hidden-small">-->
                         <!--An Android Developer.-->
                     </h1>
-                    <a class="uk-button uk-button-large download_url" href="./index/chunjizhang.apk" >下载纯记账</a>
+                    <a class="uk-button uk-button-large download_url" class="download" href="./index/chunjizhang.apk" >下载纯记账</a>
                 </div>
             </div>
         </section>
@@ -178,10 +179,10 @@
                                         纯记账，只记账
                                         <br>
                                     </p>
-                                    <p><a href="./index/chunjizhang.apk" class="download_url">点击下载</a></p>
-                                    <img src="./index/c_1.png" width="320">
-                                    <img src="./index/c_2.png" width="320">
-                                    <img src="./index/c_3.png" width="320">
+                                    <p><a href="./index/chunjizhang.apk" class="download_url download">点击下载</a></p>
+                                    <img src="./index/c_1.png" width="320" class="download_img">
+                                    <img src="./index/c_2.png" width="320" class="download_img">
+                                    <img src="./index/c_3.png" width="320" class="download_img">
                                 </div>
                             </div>
                         </div>
@@ -199,8 +200,8 @@
                                     <p>
                                         对于个人开发者来说就只有广告才能带来收入，但是我坚持在《纯记账》中不插入广告，也一直在努力把这个应用做得更好，如果你也喜欢这个应用，经济条件也尚可还可以给我捐赠一下，也希望你能推荐这个App给你的朋友。谢谢
                                         <br>
-                                    <img src="./index/donate_alipay.png" width="320">
-                                    <img src="./index/donate_wechat.jpg" width="320">
+                                    <img src="./index/donate_alipay.png" width="320" class="payCode">
+                                    <img src="./index/donate_wechat.jpg" width="320" class="payCode">
                                 </div>
                             </div>
                         </div>
@@ -283,7 +284,7 @@
         if(is_weixn()){
             $(".download_url").attr({"href":"./index/jump.htm"});
         }else{
-            $(".download_url").attr({"href":"./index/chunjizhang.apk"});
+            $(".download_url").attr({"href":config.downloadurl});
         }
 
     }
@@ -358,6 +359,10 @@ var flag=false;
         }
     });
  });
+var dnimg=$(".download_img"),payc=$(".payCode");
+for(var i=0;i<dnimg.length;i++)$(dnimg[i]).attr({"src":config.downloadImg[i]});
+
+for(var i=0;i<payc.length;i++)$(payc[i]).attr({"src":config.payCode[i]});
 
 </script>
 </html>
