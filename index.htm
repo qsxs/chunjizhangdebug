@@ -125,7 +125,7 @@
                        
                         <ul class="uk-navbar-nav ">
                             <li class=" uk-active">
-                                <a href="#" class='ani'>主页</a>
+                                <a href="#" >主页</a>
                             </li>
                             <li class="">
                                 <a href="#products" class='ani'>下载</a>
@@ -270,7 +270,7 @@
         }(),
         language: (navigator.browserLanguage || navigator.language).toLowerCase()
     }
-
+    $(".download_url").attr({"href":config.downloadurl});
     //苹果
     if (browser.versions.ios || browser.versions.iPhone || browser.versions.iPad) {
         $(".download_url").attr({"href":"#"});
