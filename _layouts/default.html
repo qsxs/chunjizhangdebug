@@ -7,6 +7,9 @@
 <link rel="shortcut icon" type="image/png" href="{{ "/index/bitbug_favicon.ico" | relative_url }}">
 {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    {% if page.title %}
+      <title>{{ page.title }}</title>
+    {% endif %}
   </head>
   <body>
     <div class="container-lg px-3 my-5 markdown-body">
